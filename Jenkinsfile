@@ -80,6 +80,7 @@ pipeline {
             agent {
                 docker {
                     image 'node:18-alpine'
+                    args '--user root'
                     reuseNode true
                 }
             }
@@ -122,7 +123,7 @@ pipeline {
             }
 
             environment {
-                CI_ENVIRONMENT_URL = 'PUT YOUR NETLIFY SITE URL HERE'
+                CI_ENVIRONMENT_URL = 'https://netlify-a.netlify.app/'
             }
 
             steps {
